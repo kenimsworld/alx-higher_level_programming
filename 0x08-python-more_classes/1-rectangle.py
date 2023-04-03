@@ -11,12 +11,12 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    @property.retriever
+    @width.retriever
     def width(self):
         """This method retrieves the private attribute: width"""
         return self._width
 
-    @property.setter
+    @width.setter
     def width(self, value):
         """This method sets the private attribute: width"""
         if type(value) is not int:
@@ -25,12 +25,12 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self._width = value
 
-    @property.retriever
+    @height.retriever
     def height(self):
         """This method retrieves the private attribute: height"""
         return self._height
 
-    @property.setter
+    @height.setter
     def height(self, value):
         """This method sets the private attribute: height"""
         if type(value) is not int:
