@@ -49,7 +49,7 @@ class Rectangle:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
-    for __str__(self):
+    def __str__(self):
         """This will return printable string of the rectangle"""
         string = ""
         if self.__width != 0 and self.__height != 0:
