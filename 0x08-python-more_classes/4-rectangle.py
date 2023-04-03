@@ -59,11 +59,6 @@ class Rectangle:
 
 
     def __repr__(self):
-        """Allows use of eval().
-      
-        Returns:
-             
-             A string of the code needed to create the instance.
-
-        """
+        """Allows use of eval()"""
+    
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
