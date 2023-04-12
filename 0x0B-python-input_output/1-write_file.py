@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-Contains the function "wrtie_file"
+Contains the function "append_write"
 """
 
 
-def write_file(filename="", text=""):
-    """function that writes a string to a text file and return the number
-    of characters written"""
-    with open(filename, 'w', encoding='utf=8') as fil:
+def append_write(filename="", text=""):
+    """function that appends a string to a text file and return the number
+    of characters added"""
+    with open(filename, 'a', encoding='utf=8') as fil:
         return fil.write(text)
