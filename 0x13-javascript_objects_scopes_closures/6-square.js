@@ -6,10 +6,11 @@ class Square extends Square01 {
     if (c === undefined) {
       this.print();
     } else {
-      for (let m = 0; m < this.height; m++) {
+      for (let i = 0; i < this.height; i++) {
         console.log('C'.repeat(this.width));
       }
     }
   }
 }
+
 module.exports = Square;
