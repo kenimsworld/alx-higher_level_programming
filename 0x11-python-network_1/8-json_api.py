@@ -1,22 +1,23 @@
 #!/usr/bin/python3
+"""Sends a POST request to http://0.0.0.0:5000/search_user with a given letter.
+Usage: ./8-json_api.py <letter>
+  - The letter is sent as the value of the variable `q`.
+  - If no letter is provided, sends `q=""`.
 """
-Write a Python script that takes in a URL, sends a
-request to the URL and displays the body of the response.
-"""
-import requests
 import sys
+import requests
+
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/search_user"
-    if len(sys.argv) == 2:
-        values = {'q': sys.argv[1]}
-    else:
-        values = {'q': ""}
-    req = requests.post(url, values)
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+    payload = {"q": letter}
+
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        if (len(req.json()) > 0):
-            print('[{}] {}'.format(req.json()['id'], req.json()['name']))
-        else:
+        response = r.json()
+        if response == {}:
             print("No result")
-    except:
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
         print("Not a valid JSON")
